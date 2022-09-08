@@ -1,7 +1,18 @@
+import React, { useEffect, useState } from "react";
 import logo from "../../logo.svg";
 import "./App.css";
+import { fetchSearchQuery } from "../../fetchAPI";
 
 function App() {
+  //current search input
+  const [searchValue, setSearchValue] = useState("");
+  //returned items
+  const [itemData, setItemData] = useState([]);
+
+  useEffect(() => {
+    fetchSearchQuery("jeans", 2).then(data => {setItemData(data)});
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -14,9 +25,7 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        ></a>
       </header>
     </div>
   );
