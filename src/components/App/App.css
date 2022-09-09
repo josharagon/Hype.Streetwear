@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -28,11 +30,102 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.store-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5% 2%;
+  font-size: 1.5em;
+  font-weight: bolder;
+  height: 10vh;
+}
+
+#navLogo {
+  width: 8em;
+}
+
+#homeMiddle {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#homeInspo { 
+  text-align: -webkit-center;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between
+}
+
+#inspoHead {
+  font-weight: bolder;
+  font-size: 25px;
+  text-align: left;
+}
+
+#randomBrand {
+  inline-size: 19vw;
+  overflow-wrap: break-word;
+  font-weight: bolder;
+  font-size: 30px;
+  font-size: 2vw;
+}
+
+#randomName {
+  inline-size: 18vw;
+  overflow-wrap: break-word;
+  font-size: 1.4vw;
+  color: rgb(205, 205, 205);
+}
+
+#inspoPic {
+  border-radius: 15px;
+}
+
+#price {
+
+}
+
+#msrp {
+  margin: 0 10px;
+  text-decoration: line-through;
+  color: #737373;
+}
+
+
+#ourPromise {
+  inline-size: 19vw;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(205, 205, 205);
+  justify-content: space-evenly;
+  height: 40%;
+}
+
+#smiley {
+  width: 13vw;
+}
+
+#gtsButton {
+  border-radius: 40px;
+  background-color: transparent;
+  color: white;
+  border: 1.5px solid white ;
+  padding: 10px;
+  width: 10vw;
+}
+
+#footer {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.5em;
+  font-weight: bolder;
+  height: 10vh;
+  padding: 1.5% 2%;
+
 }
