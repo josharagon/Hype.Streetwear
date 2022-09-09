@@ -6,7 +6,7 @@ import { Routes, Link, Route, BrowserRouter } from "react-router-dom";
 import ProductContainer from "../ProductContainer/ProductContainer";
 import SearchBox from "../SearchBox/SearchBox";
 
-function Home() {
+const Home = () => {
   //current search input
   const [searchValue, setSearchValue] = useState("");
   //returned items
@@ -29,7 +29,9 @@ function Home() {
       <header className="store-header">
         <img src="/HYPE.png" alt="image" id="navLogo" />
         <SearchBox />
-        <a>SHOP</a>
+        <Link id="shopLink" to="/shop">
+          SHOP
+        </Link>
       </header>
       <section id="homeMiddle">
         <article id="homeInspo">
@@ -47,7 +49,9 @@ function Home() {
               <span id="msrp">${randomItem.msrp}</span>
             )}
           </h3>
-          <button id="gtsButton">GO TO SHOP</button>
+          <Link to="/">
+            <button id="gtsButton">GO TO SHOP</button>
+          </Link>
         </article>
         <article id="ourPromise">
           <img src="/smiley.png" alt="smiley face emoji" id="smiley" />
@@ -62,6 +66,6 @@ function Home() {
       </footer>
     </section>
   );
-}
+};
 
 export default Home;

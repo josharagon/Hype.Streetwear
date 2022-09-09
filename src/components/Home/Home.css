@@ -44,6 +44,11 @@
   width: 8em;
 }
 
+#shopLink {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
 #homeMiddle {
   height: 80vh;
   display: flex;
@@ -118,6 +123,7 @@
   border: 1.5px solid white ;
   padding: 10px;
   width: 10vw;
+  cursor: pointer;
 }
 
 #footer {
@@ -129,3 +135,4 @@
   padding: 1% 1%;
   align-items: flex-end;
 }
+

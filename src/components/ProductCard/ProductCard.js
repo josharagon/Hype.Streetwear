@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ProductCard.css";
 
-const ProductCard = (props) => {
+const ProductCard = () => {
   return (
     <div>
       {/* <img
