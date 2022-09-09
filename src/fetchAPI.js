@@ -6,3 +6,12 @@ export const fetchSearchQuery = async (search, page) => {
       return searchResult;
     });
 };
+
+export const fetchSuggestQuery = async (query, page) => {
+  const url = `http://api.searchspring.net/api/suggest/query?siteId=${process.env.REACT_APP_SITE_ID}&query=${query}`;
+  return await fetch(url)
+    .then((response) => response.json())
+    .then((searchResult) => {
+      return searchResult;
+    });
+};

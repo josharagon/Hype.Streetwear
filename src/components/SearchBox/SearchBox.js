@@ -1,12 +1,16 @@
 import React from "react";
+import "./SearchBox.css";
 
 const SearchBox = (input) => {
   return (
-    <input
-      type="search"
-      placeholder={props.placeholder}
-      onChange={props.handleChange}
-    />
+    <form>
+      <input
+        // style={{ position: "relative" }}
+        type="search"
+        placeholder={"SEARCH"}
+        // onChange={props.handleChange}
+      />
+    </form>
   );
 };
 

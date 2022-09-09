@@ -3,6 +3,7 @@ import logo from "../../logo.svg";
 import "./App.css";
 import { fetchSearchQuery } from "../../fetchAPI";
 import ProductContainer from "../ProductContainer/ProductContainer";
+import SearchBox from "../SearchBox/SearchBox";
 
 function App() {
   //current search input
@@ -25,9 +26,9 @@ function App() {
   return (
     <section className="App">
       <header className="store-header">
-        <a>SHOP</a>
         <img src="/HYPE.png" alt="image" id="navLogo" />
-        <p>@2022</p>
+        <SearchBox />
+        <a>SHOP</a>
       </header>
       <section id="homeMiddle">
         <article id="homeInspo">

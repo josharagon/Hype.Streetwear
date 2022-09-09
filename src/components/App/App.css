@@ -126,6 +126,6 @@
   font-size: 1.5em;
   font-weight: bolder;
   height: 10vh;
-  padding: 1.5% 2%;
-
+  padding: 1% 1%;
+  align-items: flex-end;
 }
