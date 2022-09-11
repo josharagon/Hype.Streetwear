@@ -1,0 +1,20 @@
+#productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75vw;
+  height: 50vh;
+  align-self: center;
+  overflow-y: scroll;
+}
+
+
+#productContainer::-webkit-scrollbar {
+  -webkit-appearance: none;
+    width: 8px;
+    height: 8px;
+    margin-top: -30px;
+}
+
+#productContainer::-webkit-scrollbar-thumb {
+  background-color: #b5b5b5;
+}

@@ -1,0 +1,26 @@
+
+#store {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#storeHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20vh;
+  margin-top: 15vh;
+}
+
+#headContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#storeProducts {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
