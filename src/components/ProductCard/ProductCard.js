@@ -33,20 +33,31 @@ const ProductCard = ({ productInfo, setCart, cart }) => {
             X
           </p>
         )}
-        {!addingToCart && (
+        {!addingToCart && !cart.some((cart) => cart["id"] === productInfo.uid) && (
           <p
             id="atc"
             onClick={() => {
               if (productInfo.size) {
                 setAddingToCart(true);
               } else {
-                setCart([...cart, { product: productInfo, size: "OS" }]);
+                setCart([
+                  ...cart,
+                  { product: productInfo, size: "OS", id: productInfo.uid },
+                ]);
+                setAddingToCart(false);
               }
             }}
           >
             add to cart
           </p>
         )}
+
+        {!addingToCart && cart.some((cart) => cart["id"] === productInfo.uid) && (
+          <p id="atc" onClick={() => {}}>
+            in cart
+          </p>
+        )}
+
         {productInfo.size && (
           <div id="sizeContainer">
             {productInfo.size.map((name, i) => {
@@ -61,6 +72,7 @@ const ProductCard = ({ productInfo, setCart, cart }) => {
                       ...cart,
                       { product: productInfo, size: name, id: productInfo.uid },
                     ]);
+                    setAddingToCart(false);
                   }}
                 >
                   {name}
