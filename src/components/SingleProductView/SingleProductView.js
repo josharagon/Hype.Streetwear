@@ -89,8 +89,8 @@ const SingleProductView = ({ cart, setCart }) => {
                 remove
               </button>
             )}
-            <Link to={prevPath} className="atc-ks">
-              keep shopping
+            <Link to={prevPath}>
+              <button className="atc-ks">keep shopping</button>
             </Link>
           </div>
           <p id="freeShip">* free shipping on all orders over $60</p>

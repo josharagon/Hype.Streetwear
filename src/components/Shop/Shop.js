@@ -19,6 +19,17 @@ const Shop = ({ cart, setCart }) => {
   const [results, setResults] = useState({});
   const [loaded, setLoaded] = useState(false);
   const [pageData, setPageData] = useState({});
+  const [filters, setFilters] = useState([
+    "all",
+    "jackets",
+    "shirts",
+    "sweatshirts",
+    "pants",
+    "shorts",
+    "t-shirts",
+    "hats",
+    "shoes",
+  ]);
 
   const { id, num } = useParams();
 
@@ -47,6 +58,12 @@ const Shop = ({ cart, setCart }) => {
     });
   };
 
+  const handleFilter = (filter) => {
+    navigate({
+      pathname: `/shop/${filter}/1`,
+    });
+  };
+
   return (
     <section id="store">
       <Link id="cart" to="/cart">
@@ -55,11 +72,73 @@ const Shop = ({ cart, setCart }) => {
       <StoreHeader />
       <div id="storeProducts">
         <aside>
-          <h1>Filters here</h1>
+          <ul>
+            {filters.map((filter) => {
+              return (
+                <li
+                  key={filter}
+                  style={{ fontWeight: id === filter ? "bold" : null }}
+                  onClick={() => {
+                    handleFilter(filter);
+                  }}
+                >
+                  {filter}
+                </li>
+              );
+            })}
+            {/* <li
+              style={{ fontWeight: id === "all" ? "bold" : null }}
+              onClick={() => {
+                handleFilter("all");
+              }}
+            >
+              all
+            </li>
+            <li
+              style={{ fontWeight: id === "jackets" ? "bold" : null }}
+              onClick={() => {
+                handleFilter("jackets");
+              }}
+            >
+              jackets
+            </li>
+            <li
+              style={{ fontWeight: id === "shirts" ? "bold" : null }}
+              onClick={() => {
+                handleFilter("shirts");
+              }}
+            >
+              shirts
+            </li>
+            <li
+              style={{ fontWeight: id === "sweatshirts" ? "bold" : null }}
+              onClick={() => {
+                handleFilter("all");
+              }}
+            >
+              sweatshirts
+            </li>
+            <li style={{ fontWeight: id === "pants" ? "bold" : null }}>
+              pants
+            </li>
+            <li style={{ fontWeight: id === "shorts" ? "bold" : null }}>
+              shorts
+            </li>
+            <li style={{ fontWeight: id === "t-shirts" ? "bold" : null }}>
+              t-shirts
+            </li>
+            <li style={{ fontWeight: id === "hats" ? "bold" : null }}>hats</li>
+            <li style={{ fontWeight: id === "shoes" ? "bold" : null }}>
+              shoes
+            </li> */}
+          </ul>
         </aside>
         {!loaded && <h1>Loading...</h1>}
         {loaded && (
           <div>
+            <div style={{ textAlign: "center" }}>
+              <SearchBox />
+            </div>
             <div id="shopNav">
               <p
                 className="page-nav"

@@ -1,3 +1,17 @@
+ul {
+  list-style: none;
+}
+
+li {
+  text-align: right;
+  width: fit-content;
+}
+
+li:hover {
+  background-color: white;
+  color: black;
+  cursor:pointer;
+}
 
 #store {
   display: flex;
@@ -55,3 +69,4 @@
   font-weight: bolder;
   text-align: right;
 }
+

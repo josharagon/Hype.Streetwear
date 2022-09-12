@@ -54,7 +54,7 @@ const Home = ({ cart }) => {
               <span id="msrp">${randomItem.msrp}</span>
             )}
           </h3>
-          <Link to="/">
+          <Link to="/shop/1">
             <button id="gtsButton">GO TO SHOP</button>
           </Link>
         </article>

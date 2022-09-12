@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+import CartCard from "../CartCard/CartCard";
 import StoreHeader from "../StoreHeader/StoreHeader";
 
 import "./Cart.css";
@@ -14,7 +17,11 @@ const Cart = ({ cart, setCart }) => {
         </div>
         <p id="cartCount">{cart.length} items in your cart.</p>
         <article id="cartMid">
-          <div id="cartBody"></div>
+          <div id="cartBody">
+            {cart.map((item) => {
+              return <CartCard product={item} key={item.id} />;
+            })}
+          </div>
           <div id="cartSubTotal"></div>
         </article>
         <footer id="cartFooter">
@@ -22,7 +29,9 @@ const Cart = ({ cart, setCart }) => {
             free shipping on all orders over $60, some exceptions may apply
           </p>
           <div>
-            <button id="keepShopping">keep shopping</button>
+            <Link to="/">
+              <button id="keepShopping">keep shopping</button>
+            </Link>
             <button id="checkout">checkout now</button>
           </div>
         </footer>

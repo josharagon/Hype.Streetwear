@@ -32,6 +32,10 @@
   display: flex;
   /* margin: 0; */
 }
+
+#cartBody {
+  width: 100%;
+}
 #cartFooter {
   display: flex;
   justify-content: space-between;
@@ -46,6 +50,8 @@ color: white;
 height: 30px;
 margin: 10px 5px;
 border: none;
+text-decoration: none;
+padding: 5;
 }
 
 #checkout {

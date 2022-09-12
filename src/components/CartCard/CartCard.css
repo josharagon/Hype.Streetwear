@@ -1,0 +1,40 @@
+#cardCard {
+  color: white;
+  display: flex;
+  width: 100%;
+  height: 25%;
+  /* margin: px 0; */
+ overflow: hidden; 
+ border: 1px dotted white;
+ font-size: .8em;
+
+}
+
+#cartCardImage {
+  width: 20%;
+  object-fit:contain;
+  border: 1px dotted white;
+
+}
+
+#cardDetails {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 20px;
+  
+}
+
+#cardInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+#name {
+  width: 50%;
+/* width: 100px; */
+white-space:nowrap;
+/* overflow:hidden; */
+text-overflow:ellipsis;
+}
