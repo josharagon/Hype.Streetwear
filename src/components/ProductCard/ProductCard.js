@@ -6,7 +6,11 @@ const ProductCard = ({ productInfo, setCart, cart }) => {
   return (
     <div id="card">
       <div id="overlay">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link
+          to={" " + productInfo.url}
+          style={{ textDecoration: "none" }}
+          state={{ product: productInfo }}
+        >
           <p id="viewProduct">view</p>
         </Link>
         <p
@@ -29,6 +33,10 @@ const ProductCard = ({ productInfo, setCart, cart }) => {
         src={productInfo.thumbnailImageUrl}
         id="cardImage"
         alt={productInfo.name}
+        onError={({ currentTarget }) => {
+          currentTarget.onerror = null; // prevents looping
+          currentTarget.src = "/imgError.jpeg";
+        }}
       />
     </div>
   );

@@ -22,7 +22,6 @@ const SearchBox = () => {
         type="search"
         placeholder={"SEARCH"}
         onChange={(e) => {
-          console.log(e.target.value);
           setSearchVal(e.target.value);
         }}
       />

@@ -1,0 +1,13 @@
+#storeHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20vh;
+  margin-top: 10vh;
+}
+
+#headContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

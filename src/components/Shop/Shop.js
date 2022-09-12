@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import ProductContainer from "../ProductContainer/ProductContainer";
 import SearchBox from "../SearchBox/SearchBox";
+import StoreHeader from "../StoreHeader/StoreHeader";
 
 const Shop = ({ cart, setCart }) => {
   const [search, setSearch] = useState("");
@@ -53,16 +54,7 @@ const Shop = ({ cart, setCart }) => {
       <Link id="cart" to="/cart">
         CART({cart.length})
       </Link>
-      <header id="storeHead">
-        <div id="headContent">
-          <Link to="/">
-            <img src="/HYPE.png" />
-          </Link>
-          <time data-timezone-offset="-14400">
-            <b>{new Date().toLocaleString() + ""}</b>
-          </time>
-        </div>
-      </header>
+      <StoreHeader />
       <div id="storeProducts">
         <aside>
           <h1>Filters here</h1>

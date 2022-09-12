@@ -6,7 +6,6 @@ const ProductContainer = ({ results, setCart, cart }) => {
   console.log(results);
   let allResults;
   if (results.length) {
-    console.log(results, "here");
     allResults = results.map((product) => {
       return (
         <ProductCard
