@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./SearchBox.css";
 
-const SearchBox = (input) => {
+const SearchBox = () => {
+  const navigate = useNavigate();
+  const [searchVal, setSearchVal] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log(searchVal);
+    if (searchVal) {
+      navigate({
+        pathname: `/shop/${searchVal}/1`,
+      });
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={(e) => handleSearch(e)}>
       <input
-        // style={{ position: "relative" }}
         type="search"
         placeholder={"SEARCH"}
-        // onChange={props.handleChange}
+        onChange={(e) => {
+          console.log(e.target.value);
+          setSearchVal(e.target.value);
+        }}
       />
     </form>
   );

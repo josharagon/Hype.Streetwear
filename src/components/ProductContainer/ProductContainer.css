@@ -5,6 +5,7 @@
   height: 50vh;
   align-self: center;
   overflow-y: scroll;
+  flex-grow: 5
 }
 
 

@@ -47,3 +47,11 @@
   display: flex;
   justify-content: flex-end;
 }
+
+#cart {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.5em;
+  font-weight: bolder;
+  text-align: right;
+}

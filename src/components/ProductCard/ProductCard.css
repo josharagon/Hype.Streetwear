@@ -38,7 +38,7 @@
   justify-content: space-around;
 }
 #overlay:hover {
-  opacity: 70%;
+  opacity: 80%;
 }
 
 #viewProduct {
@@ -51,4 +51,14 @@
   background-color: rgb(255, 255, 255);
   color: black;
   
+}
+
+#price {
+  color: rgb(255, 255, 255);
+}
+
+#productMsrp {
+  margin: 0 10px;
+  text-decoration: line-through;
+  color: #393939;
 }

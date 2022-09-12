@@ -13,7 +13,7 @@ import {
 import ProductContainer from "../ProductContainer/ProductContainer";
 import SearchBox from "../SearchBox/SearchBox";
 
-const Shop = () => {
+const Shop = ({ cart, setCart }) => {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState({});
   const [loaded, setLoaded] = useState(false);
@@ -43,14 +43,16 @@ const Shop = () => {
   const handleClick = (action) => {
     // 👇️ navigate programmatically
 
-    console.log(`/shop ${id ? id : ""}/${pageData[action]}`);
     navigate({
-      pathname: `/shop${id ? id : ""}/${pageData[action]}`,
+      pathname: `/shop/${id ? id + "/" : ""}${pageData[action]}`,
     });
   };
 
   return (
     <section id="store">
+      <Link id="cart" to="/cart">
+        CART({cart.length})
+      </Link>
       <header id="storeHead">
         <div id="headContent">
           <Link to="/">
@@ -69,21 +71,32 @@ const Shop = () => {
         {loaded && (
           <div>
             <div id="shopNav">
-              {pageData.currentPage > 1 && (
-                <p
-                  className="page-nav"
-                  onClick={() => handleClick("previousPage")}
-                >
-                  previous
-                </p>
-              )}
-              {pageData.currentPage < pageData.totalPages && (
-                <p className="page-nav" onClick={() => handleClick("nextPage")}>
-                  next
-                </p>
-              )}
+              <p
+                className="page-nav"
+                style={{
+                  visibility: pageData.currentPage > 1 ? "" : "hidden",
+                }}
+                onClick={() => handleClick("previousPage")}
+              >
+                previous
+              </p>
+
+              <p
+                className="page-nav"
+                style={{
+                  visibility:
+                    pageData.currentPage < pageData.totalPages ? "" : "hidden",
+                }}
+                onClick={() => handleClick("nextPage")}
+              >
+                next
+              </p>
             </div>
-            <ProductContainer results={results.results} />
+            <ProductContainer
+              results={results.results}
+              cart={cart}
+              setCart={setCart}
+            />
             <p id="pageCounter">
               {pageData.currentPage} of {pageData.totalPages}
             </p>

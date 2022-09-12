@@ -6,7 +6,7 @@ import { Routes, Link, Route, BrowserRouter } from "react-router-dom";
 import ProductContainer from "../ProductContainer/ProductContainer";
 import SearchBox from "../SearchBox/SearchBox";
 
-const Home = () => {
+const Home = ({ cart }) => {
   //current search input
   const [searchValue, setSearchValue] = useState("");
   //returned items
@@ -28,10 +28,15 @@ const Home = () => {
     <section className="App">
       <header className="store-header">
         <img src="/HYPE.png" alt="image" id="navLogo" />
-        <SearchBox />
-        <Link id="shopLink" to="/shop/1">
-          SHOP
-        </Link>
+        <SearchBox searchValue={searchValue} />
+        <div className="shop-cart">
+          <Link className="shop-link" to="/shop/1">
+            SHOP
+          </Link>
+          <Link className="shop-link" to="/cart">
+            CART({cart.length})
+          </Link>
+        </div>
       </header>
       <section id="homeMiddle">
         <article id="homeInspo">

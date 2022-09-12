@@ -44,7 +44,13 @@
   width: 8em;
 }
 
-#shopLink {
+.shop-cart {
+  width: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop-link {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }

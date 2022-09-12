@@ -14,13 +14,20 @@ const App = () => {
   //returned items
   const [itemData, setItemData] = useState([]);
   const [randomItem, setRandomItem] = useState({});
-
+  const [cart, setCart] = useState([]);
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/shop/:num" element={<Shop />} />
-        <Route path="/shop/:id/:num" element={<Shop />} />
+        <Route exact path="/" element={<Home cart={cart} />} />
+        <Route
+          exact
+          path="/shop/:num"
+          element={<Shop cart={cart} setCart={setCart} />}
+        />
+        <Route
+          path="/shop/:id/:num"
+          element={<Shop cart={cart} setCart={setCart} />}
+        />
       </Routes>
     </BrowserRouter>
   );
