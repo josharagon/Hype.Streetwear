@@ -1,17 +1,18 @@
 import React from "react";
 import StoreHeader from "../StoreHeader/StoreHeader";
 
-const SingleProductView = (productObj) => {
+const SingleProductView = ({ product }) => {
+  console.log(product);
   return (
     <>
       <StoreHeader />
       <article>
         <div>
-          <img src={productObj.thumbnailPhotoUrl} />
+          <img src={product.thumbnailPhotoUrl} />
         </div>
-        <p>{productObj.name}</p>
-        <p>{productObj.color}</p>
-        <p>{productObj.description}</p>
+        <p>{product.name}</p>
+        <p>{product.color}</p>
+        <p>{product.description}</p>
       </article>
     </>
   );

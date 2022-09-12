@@ -22,8 +22,8 @@
 }
 
 #overlay {
-  height: 80%;
-  /* width: 100%; */
+  height: 95%;
+  width: 100%;
   position: absolute;
   left: 0; 
   right: 0; 
@@ -37,10 +37,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  /* overflow-y: overlay; */
+
 }
 #overlay:hover {
   opacity: 80%;
 }
+
+#sizeContainer {
+  height: fit-content;
+  overflow-y: overlay;
+  
+}
+
+#sizeContainer::-webkit-scrollbar {
+  width: auto;
+}
+
 
 #viewProduct {
   text-decoration: none;

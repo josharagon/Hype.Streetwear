@@ -3,25 +3,64 @@ import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
 const ProductCard = ({ productInfo, setCart, cart }) => {
+  const [addingToCart, setAddingToCart] = useState(false);
+
   return (
     <div id="card">
       <div id="overlay">
-        <Link
-          to={" " + productInfo.url}
-          style={{ textDecoration: "none" }}
-          state={{ product: productInfo }}
-        >
-          <p id="viewProduct">view</p>
-        </Link>
-        <p
-          id="atc"
-          onClick={() => {
-            console.log(cart);
-            setCart([...cart, productInfo]);
-          }}
-        >
-          add to cart
-        </p>
+        {!addingToCart && (
+          <Link
+            to={`${productInfo.url}`}
+            style={{ textDecoration: "none" }}
+            state={{ product: productInfo }}
+          >
+            <p id="viewProduct">view</p>
+          </Link>
+        )}
+        {addingToCart && (
+          <p
+            id="atc"
+            onClick={() => {
+              setAddingToCart(false);
+            }}
+          >
+            X
+          </p>
+        )}
+        {!addingToCart && (
+          <p
+            id="atc"
+            onClick={() => {
+              if (productInfo.size) {
+                setAddingToCart(true);
+              } else {
+                // setCart([...cart, productInfo]);
+              }
+            }}
+          >
+            add to cart
+          </p>
+        )}
+        {productInfo.size && (
+          <div id="sizeContainer">
+            {productInfo.size.map((name, i) => {
+              return (
+                <p
+                  id="atc"
+                  key={i}
+                  style={{ display: !addingToCart ? "none" : "" }}
+                  // onClick={() => {
+                  //   console.log(cart);
+                  //   setAddingToCart(true);
+                  //   setCart([...cart, productInfo]);
+                  // }}
+                >
+                  {name}
+                </p>
+              );
+            })}
+          </div>
+        )}
         <h4 id="price">
           ${productInfo.price}
           {productInfo.price < productInfo.msrp && (
