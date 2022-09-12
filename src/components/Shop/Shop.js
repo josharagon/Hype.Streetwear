@@ -42,8 +42,6 @@ const Shop = ({ cart, setCart }) => {
   }, [id, num]);
 
   const handleClick = (action) => {
-    // 👇️ navigate programmatically
-
     navigate({
       pathname: `/shop/${id ? id + "/" : ""}${pageData[action]}`,
     });

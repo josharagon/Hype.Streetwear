@@ -8,6 +8,7 @@ import SearchBox from "../SearchBox/SearchBox";
 import Home from "../Home/Home";
 import Shop from "../Shop/Shop";
 import SingleProductView from "../SingleProductView/SingleProductView";
+import Cart from "../Cart/Cart";
 
 const App = () => {
   //current search input
@@ -39,6 +40,8 @@ const App = () => {
           path="/product/:serial"
           element={<SingleProductView cart={cart} setCart={setCart} />}
         />
+
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
       </Routes>
     </BrowserRouter>
   );

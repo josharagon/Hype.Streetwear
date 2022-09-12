@@ -37,7 +37,7 @@ const SingleProductView = ({ cart, setCart }) => {
           <h4 id="productPrice">
             ${product.price}
             {product.price < product.msrp && (
-              <span id="productMsrp">${product.msrp}</span>
+              <span id="productRetail">${product.msrp}</span>
             )}
           </h4>
 
