@@ -34,7 +34,7 @@ const ProductCard = ({ productInfo, setCart, cart }) => {
               if (productInfo.size) {
                 setAddingToCart(true);
               } else {
-                // setCart([...cart, productInfo]);
+                setCart([...cart, { product: productInfo, size: "OS" }]);
               }
             }}
           >
@@ -49,11 +49,11 @@ const ProductCard = ({ productInfo, setCart, cart }) => {
                   id="atc"
                   key={i}
                   style={{ display: !addingToCart ? "none" : "" }}
-                  // onClick={() => {
-                  //   console.log(cart);
-                  //   setAddingToCart(true);
-                  //   setCart([...cart, productInfo]);
-                  // }}
+                  onClick={() => {
+                    console.log(cart);
+                    setAddingToCart(true);
+                    setCart([...cart, { product: productInfo, size: name }]);
+                  }}
                 >
                   {name}
                 </p>
