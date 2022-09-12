@@ -36,14 +36,8 @@ const App = () => {
           }
         />
         <Route
-          path="/shop/:id/:num/product/:serial"
-          element={
-            <SingleProductView
-              cart={cart}
-              setCart={setCart}
-              // currProduct={currProduct}
-            />
-          }
+          path="/product/:serial"
+          element={<SingleProductView cart={cart} setCart={setCart} />}
         />
       </Routes>
     </BrowserRouter>

@@ -1,18 +1,24 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./ProductCard.css";
 
 const ProductCard = ({ productInfo, setCart, cart }) => {
   const [addingToCart, setAddingToCart] = useState(false);
+  const location = useLocation();
 
   return (
-    <div id="card">
+    <div
+      id="card"
+      onMouseLeave={() => {
+        setAddingToCart(false);
+      }}
+    >
       <div id="overlay">
         {!addingToCart && (
           <Link
             to={`${productInfo.url}`}
             style={{ textDecoration: "none" }}
-            state={{ product: productInfo }}
+            state={{ product: productInfo, prevPath: location.pathname }}
           >
             <p id="viewProduct">view</p>
           </Link>
@@ -50,9 +56,11 @@ const ProductCard = ({ productInfo, setCart, cart }) => {
                   key={i}
                   style={{ display: !addingToCart ? "none" : "" }}
                   onClick={() => {
-                    console.log(cart);
                     setAddingToCart(true);
-                    setCart([...cart, { product: productInfo, size: name }]);
+                    setCart([
+                      ...cart,
+                      { product: productInfo, size: name, id: productInfo.uid },
+                    ]);
                   }}
                 >
                   {name}
