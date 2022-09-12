@@ -29,7 +29,7 @@ const Home = () => {
       <header className="store-header">
         <img src="/HYPE.png" alt="image" id="navLogo" />
         <SearchBox />
-        <Link id="shopLink" to="/shop">
+        <Link id="shopLink" to="/shop/1">
           SHOP
         </Link>
       </header>

@@ -8,7 +8,7 @@ const ProductContainer = ({ results }) => {
   if (results.length) {
     console.log(results, "here");
     allResults = results.map((product) => {
-      return <ProductCard productInfo={product} />;
+      return <ProductCard productInfo={product} key={product.uid} />;
     });
   }
   // const allProducts = results.results ? (
