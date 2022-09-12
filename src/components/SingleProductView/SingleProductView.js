@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import StoreHeader from "../StoreHeader/StoreHeader";
 import "./SingleProductView.css";
@@ -7,7 +7,9 @@ const SingleProductView = ({ cart, setCart }) => {
   const location = useLocation();
   const { product, prevPath } = location.state;
 
-  const [selectedSize, setSelectedSize] = useState("Small");
+  const [selectedSize, setSelectedSize] = useState(
+    product.size ? product.size[0] : "One Size"
+  );
 
   const handleRemoveItem = (id) => {
     setCart(cart.filter((item) => item.id !== id));
@@ -28,7 +30,10 @@ const SingleProductView = ({ cart, setCart }) => {
         <div id="singleProductInfoContainer">
           <p id="prouctName">{product.name}</p>
           <p id="productColor">{product.color}</p>
-          <p id="productDescription">{product.description}</p>
+          <p
+            id="productDescription"
+            dangerouslySetInnerHTML={{ __html: product.description }}
+          ></p>
           <h4 id="productPrice">
             ${product.price}
             {product.price < product.msrp && (
