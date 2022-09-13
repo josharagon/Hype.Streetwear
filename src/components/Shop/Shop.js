@@ -19,6 +19,8 @@ const Shop = ({ cart, setCart }) => {
   const [results, setResults] = useState({});
   const [loaded, setLoaded] = useState(false);
   const [pageData, setPageData] = useState({});
+  const [pageSelector, setPageSelector] = useState(1);
+
   const [filters, setFilters] = useState([
     "all",
     "jackets",
@@ -41,6 +43,7 @@ const Shop = ({ cart, setCart }) => {
         setSearch(id);
         setResults(data);
         setPageData(data.pagination);
+        setPageSelector(pageData.currentPage);
         setLoaded(true);
       });
     } else {
@@ -79,58 +82,15 @@ const Shop = ({ cart, setCart }) => {
                   key={filter}
                   style={{ fontWeight: id === filter ? "bold" : null }}
                   onClick={() => {
-                    handleFilter(filter);
+                    if (filter !== id) {
+                      handleFilter(filter);
+                    }
                   }}
                 >
                   {filter}
                 </li>
               );
             })}
-            {/* <li
-              style={{ fontWeight: id === "all" ? "bold" : null }}
-              onClick={() => {
-                handleFilter("all");
-              }}
-            >
-              all
-            </li>
-            <li
-              style={{ fontWeight: id === "jackets" ? "bold" : null }}
-              onClick={() => {
-                handleFilter("jackets");
-              }}
-            >
-              jackets
-            </li>
-            <li
-              style={{ fontWeight: id === "shirts" ? "bold" : null }}
-              onClick={() => {
-                handleFilter("shirts");
-              }}
-            >
-              shirts
-            </li>
-            <li
-              style={{ fontWeight: id === "sweatshirts" ? "bold" : null }}
-              onClick={() => {
-                handleFilter("all");
-              }}
-            >
-              sweatshirts
-            </li>
-            <li style={{ fontWeight: id === "pants" ? "bold" : null }}>
-              pants
-            </li>
-            <li style={{ fontWeight: id === "shorts" ? "bold" : null }}>
-              shorts
-            </li>
-            <li style={{ fontWeight: id === "t-shirts" ? "bold" : null }}>
-              t-shirts
-            </li>
-            <li style={{ fontWeight: id === "hats" ? "bold" : null }}>hats</li>
-            <li style={{ fontWeight: id === "shoes" ? "bold" : null }}>
-              shoes
-            </li> */}
           </ul>
         </aside>
         {!loaded && <h1>Loading...</h1>}
@@ -166,9 +126,30 @@ const Shop = ({ cart, setCart }) => {
               cart={cart}
               setCart={setCart}
             />
-            <p id="pageCounter">
-              {pageData.currentPage} of {pageData.totalPages}
-            </p>
+            <div id="pageSelectorContainer">
+              <form
+                id="pageSelectorForm"
+                onChange={(e) => {
+                  setPageSelector(e.target.value);
+                }}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  navigate({
+                    pathname: `/shop/${id}/${pageSelector}`,
+                  });
+                }}
+              >
+                <input
+                  type="number"
+                  id="pageSelector"
+                  name="pageSelector"
+                  min="1"
+                  placeholder={num}
+                  max={pageData.totalPages}
+                ></input>
+              </form>
+              <p id="pageCounter">of {pageData.totalPages}</p>
+            </div>
           </div>
         )}
       </div>

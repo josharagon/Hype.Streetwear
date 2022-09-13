@@ -53,8 +53,18 @@ li:hover {
 }
 
 #pageCounter {
-  margin: 30px 0 0 0;
-  text-align: right;
+  margin:0 0 0 15px;
+  
+}
+
+#pageSelector {
+  width: min-content;
+  text-align: center;
+  height: 70%;
+}
+
+#pageSelector::placeholder {
+  text-align: center;
 }
 
 #shopNav {
@@ -70,3 +80,8 @@ li:hover {
   text-align: right;
 }
 
+#pageSelectorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

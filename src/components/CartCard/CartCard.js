@@ -1,6 +1,9 @@
 import "./CartCard.css";
 
-const CartCard = ({ product }) => {
+const CartCard = ({ product, cart, setCart }) => {
+  const handleRemoveItem = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
   console.log(product);
   return (
     <article id="cardCard">
@@ -11,7 +14,13 @@ const CartCard = ({ product }) => {
           {/* <p>s</p> */}
           <p id="size">{product.size}</p>
         </div>
-        <p>remove</p>
+        <button
+          onClick={() => {
+            handleRemoveItem(product.id);
+          }}
+        >
+          remove
+        </button>
         <p id="price">{product.product.price}</p>
       </div>
     </article>

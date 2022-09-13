@@ -19,7 +19,14 @@ const Cart = ({ cart, setCart }) => {
         <article id="cartMid">
           <div id="cartBody">
             {cart.map((item) => {
-              return <CartCard product={item} key={item.id} />;
+              return (
+                <CartCard
+                  product={item}
+                  key={item.id}
+                  cart={cart}
+                  setCart={setCart}
+                />
+              );
             })}
           </div>
           <div id="cartSubTotal"></div>

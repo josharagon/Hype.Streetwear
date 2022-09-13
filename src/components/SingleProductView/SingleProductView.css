@@ -49,7 +49,7 @@
 
 #actionButtons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: 16px 0;
 }
@@ -58,10 +58,16 @@
   text-decoration: none;
   color: white;
   border: none;
-  padding: 0;
+  padding: 3px;
+  text-shadow: none;
   /* w: 79.042px;
   width: auto; */
   
+}
+
+.atc-ks:hover {
+  background-color: white;
+  color: black;
 }
 
 #freeShip {
