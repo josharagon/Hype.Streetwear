@@ -6,6 +6,19 @@ import StoreHeader from "../StoreHeader/StoreHeader";
 import "./Cart.css";
 
 const Cart = ({ cart, setCart }) => {
+  var formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+  const handleSubtotal = (arr) => {
+    let cost = 0;
+
+    arr.forEach((product) => {
+      cost += parseInt(product.product.price);
+    });
+
+    return formatter.format(cost);
+  };
   return (
     <>
       <StoreHeader />
@@ -31,7 +44,7 @@ const Cart = ({ cart, setCart }) => {
           </div>
         </article>
         <div id="cartSubTotal">
-          <p id="subtotal">hi</p>
+          <p id="subtotal">subtotal: {handleSubtotal(cart)}</p>
         </div>
         <footer id="cartFooter">
           <p id="shipNote">

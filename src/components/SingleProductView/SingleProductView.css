@@ -4,9 +4,15 @@
   align-items: center;
   margin: 0 15vw;
   /* width: 50÷∂%; */
-
 }
 
+@media (max-width: 700px) {
+
+  #singleProductContainer {
+    flex-direction: column;
+
+  }
+}
 #singleProductInfoContainer {
   display: flex;
   flex-direction: column;
