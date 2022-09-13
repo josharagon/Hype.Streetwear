@@ -17,3 +17,26 @@ input::placeholder {
     right: 10px;
     margin: auto;
 }
+
+
+
+.custom-search {
+  position: relative;
+}
+.custom-search-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+.custom-search-botton {
+  position: absolute;
+  right:15px; 
+  top: 7px;
+  bottom: 3px;
+  line-height: 1 !important;
+  z-index: 4;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }

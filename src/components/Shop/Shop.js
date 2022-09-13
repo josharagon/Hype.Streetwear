@@ -135,7 +135,7 @@ const Shop = ({ cart, setCart }) => {
                 onSubmit={(e) => {
                   e.preventDefault();
                   navigate({
-                    pathname: `/shop/${id}/${pageSelector}`,
+                    pathname: `/shop/${id ? id + "/" : ""}${pageSelector}`,
                   });
                 }}
               >
