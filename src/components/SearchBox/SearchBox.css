@@ -36,6 +36,11 @@ input::placeholder {
   z-index: 4;
 }
 
+.custom-search-botton:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
