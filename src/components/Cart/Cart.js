@@ -6,10 +6,11 @@ import StoreHeader from "../StoreHeader/StoreHeader";
 import "./Cart.css";
 
 const Cart = ({ cart, setCart }) => {
-  var formatter = new Intl.NumberFormat("en-US", {
+  let formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   });
+
   const handleSubtotal = (arr) => {
     let cost = 0;
 
@@ -19,6 +20,7 @@ const Cart = ({ cart, setCart }) => {
 
     return formatter.format(cost);
   };
+
   return (
     <>
       <StoreHeader />

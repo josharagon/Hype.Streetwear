@@ -4,12 +4,12 @@ import StoreHeader from "../StoreHeader/StoreHeader";
 import "./SingleProductView.css";
 
 const SingleProductView = ({ cart, setCart }) => {
-  const location = useLocation();
-  const { product, prevPath } = location.state;
-
   const [selectedSize, setSelectedSize] = useState(
     product.size ? product.size[0] : "One Size"
   );
+
+  const location = useLocation();
+  const { product, prevPath } = location.state;
 
   const handleRemoveItem = (id) => {
     setCart(cart.filter((item) => item.id !== id));

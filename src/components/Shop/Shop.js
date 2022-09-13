@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../logo.svg";
 import "./Shop.css";
 import { fetchSearchQuery } from "../../fetchAPI";
-import {
-  Routes,
-  Link,
-  Route,
-  BrowserRouter,
-  useParams,
-  useNavigate,
-} from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import ProductContainer from "../ProductContainer/ProductContainer";
 import SearchBox from "../SearchBox/SearchBox";
 import StoreHeader from "../StoreHeader/StoreHeader";

@@ -18,7 +18,6 @@ const CartCard = ({ product, cart, setCart }) => {
       <div id="cardDetails">
         <div id="cardInfo">
           <p id="name">{product.product.name}</p>
-          {/* <p>s</p> */}
           <p id="size">{product.size}</p>
         </div>
         <div id="removePrice">

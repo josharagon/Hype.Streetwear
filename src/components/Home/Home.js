@@ -1,29 +1,12 @@
-import React, { useEffect, useState } from "react";
-import logo from "../../logo.svg";
+import React, { useState } from "react";
 import "./Home.css";
-import { fetchSearchQuery } from "../../fetchAPI";
-import { Routes, Link, Route, BrowserRouter } from "react-router-dom";
-import ProductContainer from "../ProductContainer/ProductContainer";
+import { Link } from "react-router-dom";
 import SearchBox from "../SearchBox/SearchBox";
 import StoreHeader from "../StoreHeader/StoreHeader";
 
 const Home = ({ cart }) => {
   //current search input
   const [searchValue, setSearchValue] = useState("");
-  //returned items
-  const [itemData, setItemData] = useState([]);
-  const [randomItem, setRandomItem] = useState({});
-
-  useEffect(() => {
-    fetchSearchQuery("", Math.floor(Math.random() * 186)).then((result) => {
-      console.log(result);
-      getRandomItem(result.results);
-    });
-  }, []);
-
-  const getRandomItem = (list) => {
-    setRandomItem(list[Math.floor(Math.random() * list.length)]);
-  };
 
   return (
     <section

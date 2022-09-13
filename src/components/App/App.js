@@ -11,13 +11,7 @@ import SingleProductView from "../SingleProductView/SingleProductView";
 import Cart from "../Cart/Cart";
 
 const App = () => {
-  //current search input
-  const [searchValue, setSearchValue] = useState("");
-  //returned items
-  const [itemData, setItemData] = useState([]);
-  const [randomItem, setRandomItem] = useState({});
   const [cart, setCart] = useState([]);
-  const [currProduct, setCurrProduct] = useState({});
   return (
     <BrowserRouter>
       <Routes>
@@ -25,16 +19,12 @@ const App = () => {
         <Route
           exact
           path="/shop/:num"
-          element={
-            <Shop cart={cart} setCart={setCart} currProduct={currProduct} />
-          }
+          element={<Shop cart={cart} setCart={setCart} />}
         />
         <Route
           exact
           path="/shop/:id/:num"
-          element={
-            <Shop cart={cart} setCart={setCart} currProduct={currProduct} />
-          }
+          element={<Shop cart={cart} setCart={setCart} />}
         />
         <Route
           path="/product/:serial"
