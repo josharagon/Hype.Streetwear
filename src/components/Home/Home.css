@@ -192,3 +192,13 @@
 
 
 
+.disabled {
+  opacity: 30%;
+}
+
+.disabled:hover {
+  color: unset;
+  background-color: unset;
+  cursor: unset;
+  user-select: none;
+}

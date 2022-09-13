@@ -43,15 +43,15 @@ const Home = ({ cart }) => {
       <StoreHeader />
       <section id="homeMiddle">
         <ul>
-          <li>news</li>
-          <li>fall/winter 2022 preview</li>
-          <li>fall/winter 2022 lookbook</li>
+          <li className="disabled">news</li>
+          <li className="disabled">fall/winter 2022 preview</li>
+          <li className="disabled">fall/winter 2022 lookbook</li>
           <Link className="shop-link" to="/shop/1">
             <li>shop</li>
           </Link>
-          <li>about</li>
-          <li>stores</li>
-          <li>contact</li>
+          <li className="disabled">about</li>
+          <li className="disabled">stores</li>
+          <li className="disabled">contact</li>
         </ul>
         <div id="socialMedias">
           <svg
