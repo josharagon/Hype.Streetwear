@@ -4,8 +4,6 @@
   margin: 0 25vw;
   border: 1px solid white;
   justify-content: center
-
-
 }
 
 #tabs {
@@ -35,7 +33,10 @@
 
 #cartBody {
   width: 100%;
+  overflow-y: scroll;
 }
+
+
 #cartFooter {
   display: flex;
   justify-content: space-between;

@@ -32,6 +32,11 @@ li:hover {
   align-items: center;
 }
 
+#searchbarContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .page-nav {
   background-color: transparent;
   border: none;

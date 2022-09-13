@@ -21,14 +21,16 @@ const CartCard = ({ product, cart, setCart }) => {
           {/* <p>s</p> */}
           <p id="size">{product.size}</p>
         </div>
-        <button
-          onClick={() => {
-            handleRemoveItem(product.id);
-          }}
-        >
-          remove
-        </button>
-        <p id="price">{product.product.price}</p>
+        <div id="removePrice">
+          <button
+            onClick={() => {
+              handleRemoveItem(product.id);
+            }}
+          >
+            remove
+          </button>
+          <p id="price">{product.product.price}</p>
+        </div>
       </div>
     </article>
   );

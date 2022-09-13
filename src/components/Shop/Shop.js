@@ -96,7 +96,7 @@ const Shop = ({ cart, setCart }) => {
         {!loaded && <h1>Loading...</h1>}
         {loaded && (
           <div>
-            <div style={{ textAlign: "center" }}>
+            <div id="searchbarContainer">
               <SearchBox />
             </div>
             <div id="shopNav">

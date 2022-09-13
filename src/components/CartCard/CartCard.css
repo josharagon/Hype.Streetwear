@@ -27,7 +27,13 @@
 #cardInfo {
   display: flex;
   flex-direction: column;
-  max-width: 25%;
+}
+
+
+#removePrice {
+  display: flex;
+    justify-content: space-between;
+    width: 50%;
 }
 
 #name {

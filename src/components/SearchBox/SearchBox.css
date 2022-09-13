@@ -1,7 +1,7 @@
 input {
-  width: 25vw;
+  width: 20vw;
   position: relative;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 input::placeholder {
@@ -22,6 +22,7 @@ input::placeholder {
 
 .custom-search {
   position: relative;
+  width: 18vw;
 }
 .custom-search-input {
   width: 100%;
