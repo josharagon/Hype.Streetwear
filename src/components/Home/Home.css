@@ -56,7 +56,7 @@
 }
 
 #homeMiddle {
-  height: 60vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,7 +167,7 @@
   justify-content: space-between;
   font-size: 1.5em;
   font-weight: bolder;
-  height: 10vh;
+  height: 20vh;
   padding: 1% 1%;
   align-items: flex-end;
 }

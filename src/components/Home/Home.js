@@ -35,9 +35,6 @@ const Home = ({ cart }) => {
       <header className="store-header">
         <SearchBox searchValue={searchValue} />
         <div className="shop-cart">
-          <Link className="shop-link" to="/shop/1">
-            SHOP
-          </Link>
           <Link className="shop-link" to="/cart">
             CART({cart.length})
           </Link>
@@ -49,12 +46,12 @@ const Home = ({ cart }) => {
           <li>news</li>
           <li>fall/winter 2022 preview</li>
           <li>fall/winter 2022 lookbook</li>
-          <li>shop</li>
-          <li>random</li>
+          <Link className="shop-link" to="/shop/1">
+            <li>shop</li>
+          </Link>
           <li>about</li>
           <li>stores</li>
           <li>contact</li>
-          <li>mailinglist</li>
         </ul>
         <div id="socialMedias">
           <svg
