@@ -15,10 +15,6 @@
   }
 }
 
-svg:hover {
-  opacity: 60%;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -62,8 +58,38 @@ svg:hover {
 #homeMiddle {
   height: 60vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  align-self: center;
+  width: fit-content;
+
+}
+
+#homeMiddle ul {
+  padding: 0;
+}
+
+#homeMiddle li {
+    margin-bottom: 15px;
+}
+
+#socialMedias {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin-top: 20px;
+}
+
+#socialMedias svg {
+  margin-right: 15px;
+  color: gray;
+  height: 20px;
+}
+
+#socialMedias svg:hover {
+  color: white;
 }
 
 #homeInspo { 
@@ -138,11 +164,31 @@ svg:hover {
 
 #footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   font-size: 1.5em;
   font-weight: bolder;
   height: 10vh;
   padding: 1% 1%;
   align-items: flex-end;
 }
+
+#footerLinks {
+  display: flex;
+  width: 20vw;
+  justify-content: space-evenly;
+}
+
+#footerLinks a{
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+#footerLinks a:hover{
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+
+
 
