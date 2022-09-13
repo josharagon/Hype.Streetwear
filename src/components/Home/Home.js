@@ -108,7 +108,7 @@ const Home = ({ cart }) => {
           <a>f.a.q.</a>
           <a>accessibility</a>
         </div>
-        <p>@2022</p>
+        <a>@2022</a>
       </footer>
     </section>
   );

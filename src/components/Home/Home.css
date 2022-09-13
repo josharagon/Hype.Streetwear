@@ -178,12 +178,12 @@
   justify-content: space-evenly;
 }
 
-#footerLinks a{
+#footer a{
   font-size: 15px;
   font-weight: lighter;
 }
 
-#footerLinks a:hover{
+#footer a:hover{
   color: black;
   background-color: white;
   cursor: pointer;
