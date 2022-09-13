@@ -7,7 +7,14 @@ const CartCard = ({ product, cart, setCart }) => {
   console.log(product);
   return (
     <article id="cardCard">
-      <img id="cartCardImage" src={product.product.thumbnailImageUrl} />
+      <img
+        id="cartCardImage"
+        src={product.product.thumbnailImageUrl}
+        onError={({ currentTarget }) => {
+          currentTarget.onerror = null; // prevents looping
+          currentTarget.src = "/imgError.jpeg";
+        }}
+      />
       <div id="cardDetails">
         <div id="cardInfo">
           <p id="name">{product.product.name}</p>
