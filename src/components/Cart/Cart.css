@@ -70,6 +70,20 @@ padding: 5;
 }
 
 
+#cartSubTotal {
+  text-align: right;
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end
+}
+
+#subtotal {
+color: black;
+background-color: white;
+width: fit-content;
+}
+
+
 #keepShopping:hover, #checkout:hover {
   opacity: 80%;
   cursor: pointer;

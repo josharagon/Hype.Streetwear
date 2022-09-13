@@ -17,16 +17,15 @@ const SingleProductView = ({ cart, setCart }) => {
 
   return (
     <>
-      <button
-        onClick={() => {
-          console.log(cart, product);
-        }}
-      >
-        log cart
-      </button>
       <StoreHeader />
       <article id="singleProductContainer">
-        <img src={product.thumbnailImageUrl} />
+        <img
+          src={product.thumbnailImageUrl}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null; // prevents looping
+            currentTarget.src = "/imgError.jpeg";
+          }}
+        />
         <div id="singleProductInfoContainer">
           <p id="prouctName">{product.name}</p>
           <p id="productColor">{product.color}</p>
@@ -42,7 +41,9 @@ const SingleProductView = ({ cart, setCart }) => {
           </h4>
 
           {cart.some((cart) => cart["id"] === product.uid) && (
-            <button id="inCart">in cart</button>
+            <Link to={"/cart"}>
+              <button id="inCart">in cart</button>
+            </Link>
           )}
           {!cart.some((cart) => cart["id"] === product.uid) && (
             <select

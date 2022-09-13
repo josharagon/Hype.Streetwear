@@ -28,6 +28,7 @@
 #cardInfo {
   display: flex;
   flex-direction: column;
+  max-width: 25%;
 }
 
 #name {

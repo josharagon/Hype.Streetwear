@@ -30,7 +30,7 @@ input::placeholder {
 .custom-search-botton {
   position: absolute;
   right:15px; 
-  top: 7px;
+  top: 8px;
   bottom: 3px;
   line-height: 1 !important;
   z-index: 4;

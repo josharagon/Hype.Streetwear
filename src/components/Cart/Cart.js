@@ -29,8 +29,10 @@ const Cart = ({ cart, setCart }) => {
               );
             })}
           </div>
-          <div id="cartSubTotal"></div>
         </article>
+        <div id="cartSubTotal">
+          <p id="subtotal">hi</p>
+        </div>
         <footer id="cartFooter">
           <p id="shipNote">
             free shipping on all orders over $60, some exceptions may apply
