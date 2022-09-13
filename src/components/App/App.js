@@ -9,6 +9,7 @@ import Home from "../Home/Home";
 import Shop from "../Shop/Shop";
 import SingleProductView from "../SingleProductView/SingleProductView";
 import Cart from "../Cart/Cart";
+import { Helmet } from "react-helmet";
 
 const App = () => {
   //current search input
@@ -20,6 +21,13 @@ const App = () => {
   const [currProduct, setCurrProduct] = useState({});
   return (
     <BrowserRouter>
+      <Helmet>
+        <title>Hype</title>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
+      </Helmet>
       <Routes>
         <Route exact path="/" element={<Home cart={cart} />} />
         <Route
