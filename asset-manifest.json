@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Hype.Streetwear/static/css/main.106f7c21.css",
+    "main.js": "/Hype.Streetwear/static/js/main.fa315622.js",
+    "static/js/787.ee027c2d.chunk.js": "/Hype.Streetwear/static/js/787.ee027c2d.chunk.js",
+    "static/media/logo.svg": "/Hype.Streetwear/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Hype.Streetwear/index.html",
+    "main.106f7c21.css.map": "/Hype.Streetwear/static/css/main.106f7c21.css.map",
+    "main.fa315622.js.map": "/Hype.Streetwear/static/js/main.fa315622.js.map",
+    "787.ee027c2d.chunk.js.map": "/Hype.Streetwear/static/js/787.ee027c2d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.106f7c21.css",
+    "static/js/main.fa315622.js"
+  ]
+}
