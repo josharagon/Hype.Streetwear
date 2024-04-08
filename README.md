@@ -1,1 +1,1 @@
-# SearchSpring Take Home Challenge
+
